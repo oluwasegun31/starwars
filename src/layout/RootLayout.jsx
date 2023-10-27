@@ -12,7 +12,7 @@ export default function RootLayout() {
   const navigate = useNavigate();
   // isActtive object for navlinks
   const navActive = {
-    active: "font-medium px-2 bg-slate-600 text-tertiary",
+    active: "font-medium px-2 bg-primary text-tertiary h-full",
     notActive: "font-normal md:text-tertiary text-alternate",
   };
   // navigation active state
@@ -26,14 +26,14 @@ export default function RootLayout() {
   return (
     <>
       <header
-        className={`w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto bg-transparent transition-all duration-300 ${
+        className={`z-20 w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto bg-transparent transition-all duration-300 ${
           navIsActive ? "fixed top-2" : "relative top-auto"
         }`}
       >
         <nav
-          className={`w-full border-y border-y-slate-400 border-opacity-75 py-2 px-3 flex justify-between items-center transition-all duration-300 ${
+          className={`w-full border-y border-y-slate-400 py-1 px-3 flex justify-between items-center transition-all duration-300 ${
             navIsActive
-              ? "bg-slate-800 rounded-full"
+              ? "bg-red-700 rounded-full"
               : "bg-transparent rounded-none"
           }`}
         >
@@ -88,7 +88,7 @@ export default function RootLayout() {
           </div>
         </nav>
       </header>
-      <main className="px-4 max-w-[1400px] mx-auto h-screen">
+      <main className="max-w-[1400px] mx-auto ">
         <Outlet />
       </main>
       <footer className="h-screen">footer</footer>

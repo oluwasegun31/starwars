@@ -17,7 +17,7 @@ export default {
         alternate: "#0A0F24"
       },
       backgroundImage: {
-        landing: "url('./src/assets/landing-bg2.png')"
+        landing: "url('./src/assets/landing-bg.png')"
       }
     },
   },

@@ -1,7 +1,5 @@
 export default function HomePage() {
   return (
-    <div className="">
-      <h1 className="text-tertiary text-8xl font-author">HomePage</h1>
-    </div>
+    <section className="bg-landing bg-center bg-cover w-full h-screen z-0"></section>
   );
 }
