@@ -27,7 +27,9 @@ export default function RootLayout() {
     <>
       <header
         className={`z-20 w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto bg-transparent transition-all duration-300 ${
-          navIsActive ? "fixed top-2" : "relative top-auto"
+          navIsActive
+            ? "fixed top-2 left-[50%] -translate-x-[50%]"
+            : "relative top-auto left-auto translate-x-0 "
         }`}
       >
         <nav
