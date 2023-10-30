@@ -33,7 +33,7 @@ export default function RootLayout() {
         <nav
           className={`w-full border-y border-y-slate-400 py-1 px-3 flex justify-between items-center transition-all duration-300 ${
             navIsActive
-              ? "bg-red-700 rounded-full"
+              ? "bg-red-500 rounded-full"
               : "bg-transparent rounded-none"
           }`}
         >
@@ -91,7 +91,7 @@ export default function RootLayout() {
       <main className="max-w-[1400px] mx-auto ">
         <Outlet />
       </main>
-      <footer className="h-screen">footer</footer>
+      <footer className="">footer</footer>
     </>
   );
 }
