@@ -11,6 +11,7 @@ import kashyyyk from "../assets/Kashyyyk.jpg";
 import kashyyykWide from "../assets/Kashyyyk-wide.png";
 import stewjon from "../assets/Stewjon.png";
 import stewjonWide from "../assets/Stewjon-wide.jpg";
+import starDestroyer from "../assets/Star-Destroyer.png";
 
 export default function HomePage() {
   return (
@@ -106,7 +107,7 @@ export default function HomePage() {
         </section>
         {/* Fearured planets */}
         <FeaturedHeading heading={"planets"} />
-        <section className="xl:w-[83%] lg:w-[85%] sm:w-[95%] w-full mx-auto border border-tertiary border-opacity-20 mt-32 p-2 grid md:grid-cols-4 grid-cols-2 sm:gap-x-4 gap-x-2 md:gap-y-0 sm:gap-y-24 gap-y-16">
+        <section className="xl:w-[83%] lg:w-[85%] sm:w-[95%] w-full mx-auto border border-tertiary border-opacity-20 mt-32 p-2 grid md:grid-cols-4 grid-cols-2 sm:gap-x-4 gap-x-2 md:gap-y-0 sm:gap-y-24 gap-y-16 mb-32">
           <div className="relative group cursor-default">
             <img
               src={tatooineWide}
@@ -167,6 +168,18 @@ export default function HomePage() {
               Stewjon
             </p>
           </div>
+        </section>
+        {/* Featured Starship */}
+        <FeaturedHeading heading={"Starship"} />
+        <section className="w-full flex flex-col justify-center items-center mt-16 relative">
+          <img
+            src={starDestroyer}
+            alt="Star-Destroyer"
+            className="w-[600px] object-contain"
+          />
+          <p className="w-full text-center capitalize font-author font-semibold lg:text-9xl sm:text-8xl text-[12vw] leading-none absolute top-24 left-[50%] lg:-translate-x-[50%] -translate-x-[45%] mix-blend-difference opacity-70">
+            Star Destroyer
+          </p>
         </section>
       </section>
     </>

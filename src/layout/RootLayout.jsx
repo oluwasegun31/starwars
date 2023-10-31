@@ -4,6 +4,7 @@ import { TbUserHexagon } from "react-icons/tb";
 import { RiMenu4Fill } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
 import { NavContext } from "../context";
+import { BiLogoLinkedin, BiLogoTwitter, BiLogoInstagram } from "react-icons/bi";
 
 export default function RootLayout() {
   // navContext
@@ -93,7 +94,33 @@ export default function RootLayout() {
       <main className="max-w-[1400px] mx-auto ">
         <Outlet />
       </main>
-      <footer className="">footer</footer>
+      <footer className="w-full md:px-12 sm:px-8 px-3">
+        <section className="border-t border-t-tertiary border-opacity-50 mt-24 md:py-6 py-4 md:h-[200px] h-[150px] flex flex-col justify-between">
+          <div className="flex justify-between items-center">
+            <p className="font-author lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-semibold">
+              Explore the galaxy
+            </p>
+            <TbUserHexagon className="sm:text-[26px] text-[22px] cursor-pointer" />
+          </div>
+          <div className="flex sm:flex-row flex-col sm:justify-between justify-center items-center sm:gap-0 gap-4 font-supreme">
+            <div className="flex justify-start items-center sm:gap-4 gap-2 font-medium sm:text-lg text-base">
+              <img
+                src={logo}
+                alt="logo"
+                className="sm:w-10 w-6 object-contain"
+              />
+              <p>privacy policy</p>
+              <p>.</p>
+              <p>copyright@2023</p>
+            </div>
+            <div className="flex justify-end items-center gap-4 text-2xl">
+              <BiLogoLinkedin />
+              <BiLogoTwitter />
+              <BiLogoInstagram />
+            </div>
+          </div>
+        </section>
+      </footer>
     </>
   );
 }

@@ -9,7 +9,7 @@ export default function FeaturedHeading({ heading }) {
   return (
     <div className="text-center font-supreme relative">
       <p className="text-lg">featured</p>
-      <h4 className="font-semibold text-4xl uppercase leading-[0.8] text-secondary">
+      <h4 className="font-semibold md:text-4xl text-[28px] uppercase leading-[0.8] text-secondary">
         {heading}
       </h4>
       <img
