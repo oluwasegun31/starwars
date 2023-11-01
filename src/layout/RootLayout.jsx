@@ -46,7 +46,7 @@ export default function RootLayout() {
             }`}
           >
             <NavLink
-              to={"/"}
+              to={"characters"}
               className={({ isActive }) =>
                 isActive ? navActive.active : navActive.notActive
               }
@@ -94,7 +94,7 @@ export default function RootLayout() {
       <main className="max-w-[1400px] mx-auto ">
         <Outlet />
       </main>
-      <footer className="w-full md:px-12 sm:px-8 px-3">
+      <footer className="w-full md:px-12 sm:px-8 px-3 max-w-[1400px] mx-auto">
         <section className="border-t border-t-tertiary border-opacity-50 mt-24 md:py-6 py-4 md:h-[200px] h-[150px] flex flex-col justify-between">
           <div className="flex justify-between items-center">
             <p className="font-author lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-semibold">
