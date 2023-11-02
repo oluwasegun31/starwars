@@ -5,7 +5,14 @@ import { RiMenu4Fill } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
 import { NavContext } from "../context";
 import { BiLogoLinkedin, BiLogoTwitter, BiLogoInstagram } from "react-icons/bi";
-
+/**
+ * RootLayout Component
+ * This component serves as the root layout for the entire application.
+ * It includes the navigation bar, content outlet, and a footer section.
+ * The navigation bar allows users to navigate to different sections of
+ * the app, and the content outlet displays the main content. The footer
+ * contains information about the application or additional links.
+ */
 export default function RootLayout() {
   // navContext
   const { isOpen, setIsOpen } = useContext(NavContext);

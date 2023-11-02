@@ -12,7 +12,10 @@ import kashyyykWide from "../assets/Kashyyyk-wide.png";
 import stewjon from "../assets/Stewjon.png";
 import stewjonWide from "../assets/Stewjon-wide.jpg";
 import starDestroyer from "../assets/Star-Destroyer.png";
-
+/**
+ * HomePage Component
+ * This component provides the landing page when the user first enters the site.
+ */
 export default function HomePage() {
   return (
     <>
