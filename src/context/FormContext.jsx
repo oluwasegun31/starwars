@@ -21,7 +21,7 @@ export default function FormProvider({ children }) {
   const googleAuthentication = async () => {
     const success = await googleProviderLogic();
     if (success) {
-      navigate("/", { replace: true });
+      navigate("/account-setup", { replace: true });
     } else {
       setErrorMessage("Something went wrong!");
       setTimeout(() => setErrorMessage(null), 4000);
@@ -32,7 +32,7 @@ export default function FormProvider({ children }) {
   const githubAuthentication = async () => {
     const success = await githubProviderLogic();
     if (success) {
-      navigate("/", { replace: true });
+      navigate("/account-setup", { replace: true });
     } else {
       setErrorMessage("Something went wrong!");
       setTimeout(() => setErrorMessage(null), 4000);
