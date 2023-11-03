@@ -8,13 +8,11 @@ let githubProviderError = null;
 // function that signs up a user with github provider if successful returns true and error type null and if unsuccesful returns the error type to the error message and returns false
 const githubProviderLogic = async () => {
     try {
-        const user = await signInWithPopup(auth, githubProvider);
-        console.log(user);
+        await signInWithPopup(auth, githubProvider);
         success = true;
         githubProviderError = null;
         return success;
     } catch (err) {
-        console.error(err.message);
         success = false;
         githubProviderError = err.message;
         return success

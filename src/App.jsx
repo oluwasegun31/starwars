@@ -6,8 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import { HomePage, SigupPage, SigninPage } from "./pages";
+import { HomePage, SigupPage, SigninPage, TestPrivate } from "./pages";
 import { FormProvider } from "./context";
+import PrivateLayout from "./layout/PrivateLayout";
 
 function App() {
   const router = createBrowserRouter(
@@ -30,6 +31,9 @@ function App() {
             </FormProvider>
           }
         />
+        <Route element={<PrivateLayout />}>
+          <Route path="test" element={<TestPrivate />} />
+        </Route>
       </Route>
     )
   );

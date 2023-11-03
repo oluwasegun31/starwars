@@ -3,7 +3,10 @@ import { FormError, FormInput, FormLoader } from "../components";
 import { useContext } from "react";
 import { FormContext } from "../context";
 import { signinError, signinLogic } from "../authentication/siginin";
-
+/**
+ * SigninPage Component
+ * This component presents the user interface for user sign in. Users can sign in with their email and password, and error handling is included for a seamless authentication process. It also provides a link to the sign-up page for existing users.
+ */
 export default function SigninPage() {
   // Get form input context and navigate function from FormContext and router-dom respectfully
   const {

@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { NavProvider } from "./context";
+import { GlobalUserProvider, NavProvider } from "./context";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <NavProvider>
-      <App />
-    </NavProvider>
+    <GlobalUserProvider>
+      <NavProvider>
+        <App />
+      </NavProvider>
+    </GlobalUserProvider>
   </React.StrictMode>
 );

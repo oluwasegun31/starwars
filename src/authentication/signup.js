@@ -8,13 +8,11 @@ let signupError = null;
 // function that signs up a user with email and password as argument if successful returns true and error type null and if unsuccesful returns the error type to the error message and returns false
 const signupLogic = async (email, password) => {
     try {
-        const user = await createUserWithEmailAndPassword(auth, email, password);
-        console.log(user);
+        await createUserWithEmailAndPassword(auth, email, password);
         success = true;
         signupError = null;
         return success
     } catch (err) {
-        console.error(err.message);
         success = false;
         signupError = err.message;
         return success
