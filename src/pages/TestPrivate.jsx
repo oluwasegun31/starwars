@@ -6,6 +6,7 @@ import { GlobalUserContext } from "../context";
 export default function TestPrivate() {
   const navigate = useNavigate();
   const { user } = useContext(GlobalUserContext);
+  console.log(user);
 
   const signoutSubmit = async () => {
     const success = await signoutLogic();

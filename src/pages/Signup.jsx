@@ -30,7 +30,7 @@ export default function SigupPage() {
     if (success) {
       // On success, clear loading and navigate to the home page
       setFormLoading(null);
-      navigate("/", { replace: true });
+      navigate("/account-setup", { replace: true });
     } else {
       // On failure, clear loading and set an error message based on error types
       setFormLoading(null);

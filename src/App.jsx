@@ -6,7 +6,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import { HomePage, SigupPage, SigninPage, TestPrivate } from "./pages";
+import {
+  HomePage,
+  SigupPage,
+  SigninPage,
+  TestPrivate,
+  AccountSetup,
+} from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
 
@@ -33,6 +39,7 @@ function App() {
         />
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
+          <Route path="account-setup" element={<AccountSetup />} />
         </Route>
       </Route>
     )

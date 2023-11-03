@@ -3,7 +3,7 @@ import logo from "../assets/logo2.png";
 import { TbUserHexagon } from "react-icons/tb";
 import { RiMenu4Fill } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
-import { NavContext } from "../context";
+import { GlobalUserContext, NavContext } from "../context";
 import { BiLogoLinkedin, BiLogoTwitter, BiLogoInstagram } from "react-icons/bi";
 /**
  * RootLayout Component
@@ -16,6 +16,8 @@ import { BiLogoLinkedin, BiLogoTwitter, BiLogoInstagram } from "react-icons/bi";
 export default function RootLayout() {
   // navContext
   const { isOpen, setIsOpen } = useContext(NavContext);
+  // user context
+  const { user } = useContext(GlobalUserContext);
   // useNavigate function
   const navigate = useNavigate();
   // isActtive object for navlinks
@@ -88,7 +90,15 @@ export default function RootLayout() {
           </div>
 
           <div className="px-4 flex justify-center items-center gap-4">
-            <TbUserHexagon className="text-[26px] cursor-pointer" />
+            {user?.photoURL ? (
+              <img
+                src={user.photoURL}
+                alt="profile"
+                className="sm:w-10 w-8 object-contain"
+              />
+            ) : (
+              <TbUserHexagon className="text-[26px] cursor-pointer" />
+            )}
             <div
               className="text-2xl md:hidden block cursor-pointer"
               onClick={() => setIsOpen((val) => !val)}
