@@ -20,11 +20,18 @@ export default function SigninPage() {
   const navigate = useNavigate();
   // Function to handle the signin with email and password form
   const signinForm = async () => {
-    // Set loading state to true
-    setFormLoading(true);
     // Get the email and password values from the input fields
     const emailValue = emailRef.current.value;
     const passwordValue = passwordRef.current.value;
+    // Check if either email or password field is empty
+    if (emailValue === "" || passwordValue === "") {
+      // Set error message and clear it after 4 seconds
+      setErrorMessage("Email or password field empty");
+      setTimeout(() => setErrorMessage(null), 4000);
+      return;
+    }
+    // Set loading state to true
+    setFormLoading(true);
     // Logic for signup
     const success = await signinLogic(emailValue, passwordValue);
     if (success) {
@@ -57,6 +64,12 @@ export default function SigninPage() {
             Sign Up
           </Link>
         </p>
+        <Link
+          to={"reset-password"}
+          className="w-full text-center text-xl font-medium text-secondary"
+        >
+          Forgot password?
+        </Link>
       </aside>
       {errorMessage && <FormError errMessage={errorMessage} />}
       {formLoading && <FormLoader />}

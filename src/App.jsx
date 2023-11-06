@@ -12,6 +12,7 @@ import {
   SigninPage,
   TestPrivate,
   AccountSetup,
+  ResetPassword,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -29,14 +30,17 @@ function App() {
             </FormProvider>
           }
         />
-        <Route
-          path="signin"
-          element={
-            <FormProvider>
-              <SigninPage />
-            </FormProvider>
-          }
-        />
+        <Route path="signin">
+          <Route
+            index
+            element={
+              <FormProvider>
+                <SigninPage />
+              </FormProvider>
+            }
+          />
+          <Route path="reset-password" element={<ResetPassword />} />
+        </Route>
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
           <Route path="account-setup" element={<AccountSetup />} />

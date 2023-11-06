@@ -94,7 +94,7 @@ export default function RootLayout() {
               <img
                 src={user.photoURL}
                 alt="profile"
-                className="sm:w-10 w-8 object-contain"
+                className="sm:w-10 w-8 object-contain rounded-full"
               />
             ) : (
               <TbUserHexagon className="text-[26px] cursor-pointer" />

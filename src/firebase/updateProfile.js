@@ -14,7 +14,6 @@ const updateBasicProfile = async (displayName, profileUrl) => {
         updateProfileError = null;
         return true
     } catch (err) {
-        console.error(err.message);
         // set the profile error to err.message and return false
         updateProfileError = err.message;
         return false

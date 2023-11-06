@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { retrieveAllImage } from "../firebase/retrieveImages";
 import { updateBasicProfile } from "../firebase/updateProfile";
 import { useNavigate } from "react-router-dom";
-import { FormError } from "../components";
+import { FormError, FormLoader } from "../components";
 /**
  * AccountSetup Component - This component handles the account setup process for a user. It allows them to choose a display name and a profile picture.
  * It retrieves available profile pictures from Firebase and updates the user's information accordingly.
@@ -15,6 +15,8 @@ export default function AccountSetup() {
   const [profilePic, setProfilePic] = useState(null);
   // display name ref
   const displayNameRef = useRef();
+  // setLoading context
+  const [isLoading, setIsLoading] = useState(false);
   // setError context
   const [isError, setIsError] = useState(null);
   // navigate function
@@ -30,15 +32,28 @@ export default function AccountSetup() {
   }, []);
   // function that updates the user display name and profile picture;
   const updateUserProfile = async () => {
+    // Get the display name value from the input field
     const displayName = displayNameRef.current.value;
+    // Check if the display name field is empty
     if (displayName === "") {
+      // Set error message and clear it after 4 seconds
       setIsError("Input Display Name");
       setTimeout(() => setIsError(null), 4000);
     } else {
+      // Set loading state to true
+      setIsLoading(true);
+      // Call the updateBasicProfile function to update the user's profile
       const success = await updateBasicProfile(displayName, profilePic);
-      success ? navigate("/test", { replace: true }) : console.log("error");
+      // Set loading state to false
+      setIsLoading(false);
+      // Check the success of the updateBasicProfile function. Navigate to the 'test' page on successful profile update or Set error message and clear it after 4 seconds if unsuccessful
+      success
+        ? navigate("/test", { replace: true })
+        : setIsError("something went wrong!");
+      setTimeout(() => setIsError(null), 4000);
     }
   };
+
   return (
     <section className="w-full h-[90vh] font-author">
       <p className="text-center lg:text-7xl sm:text-6xl text-4xl capitalize font-medium leading-none">
@@ -104,6 +119,7 @@ export default function AccountSetup() {
         </form>
       </section>
       {isError && <FormError errMessage={"Input Display Name"} />}
+      {isLoading && <FormLoader />}
     </section>
   );
 }
