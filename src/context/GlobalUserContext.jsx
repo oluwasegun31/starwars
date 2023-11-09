@@ -6,7 +6,7 @@ export const GlobalUserContext = createContext(null);
 /**
  * GlobalUserProvider Component - This component serves as a provider for the global user context. It manages the current user's authentication state and provides the user data to the rest of the application. It also handles the loading state while checking the authentication status.
  */
-export default function GlobalUserProvider({ children }) {
+export const GlobalUserProvider = ({ children }) => {
   // Declare state variables for the current user and a loading indicator
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,4 +31,4 @@ export default function GlobalUserProvider({ children }) {
       {!isLoading && children}
     </GlobalUserContext.Provider>
   );
-}
+};

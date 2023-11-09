@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FormError, FormInput, FormLoader } from "../components";
 import { useContext } from "react";
 import { FormContext } from "../context";
@@ -8,7 +8,7 @@ import { signinError, signinLogic } from "../authentication/siginin";
  * This component presents the user interface for user sign in. Users can sign in with their email and password, and error handling is included for a seamless authentication process. It also provides a link to the sign-up page for existing users.
  */
 export default function SigninPage() {
-  // Get form input context and navigate function from FormContext and router-dom respectfully
+  // Get form input context, navigate and location function from FormContext and router-dom respectfully
   const {
     emailRef,
     passwordRef,
@@ -18,6 +18,8 @@ export default function SigninPage() {
     setFormLoading,
   } = useContext(FormContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
   // Function to handle the signin with email and password form
   const signinForm = async () => {
     // Get the email and password values from the input fields
@@ -37,7 +39,11 @@ export default function SigninPage() {
     if (success) {
       // On success, clear loading and navigate to the home page
       setFormLoading(null);
-      navigate("/", { replace: true });
+      // Get the url from the prev page which redirected to the signin page
+      const url = location.state;
+      url
+        ? navigate(url.from.pathname, { replace: true })
+        : navigate("/", { replace: true });
     } else {
       // On failure, clear loading and set an error message based on error types
       setFormLoading(null);

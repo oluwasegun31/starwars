@@ -8,7 +8,7 @@ import { githubProviderLogic } from "../authentication/githubProvider";
  */
 export const FormContext = createContext(null);
 
-export default function FormProvider({ children }) {
+export const FormProvider = ({ children }) => {
   // error message state, loading state and navigate function
   const [errorMessage, setErrorMessage] = useState(null);
   const [formLoading, setFormLoading] = useState(null);
@@ -54,4 +54,4 @@ export default function FormProvider({ children }) {
       {children}
     </FormContext.Provider>
   );
-}
+};

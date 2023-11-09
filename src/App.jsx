@@ -13,6 +13,7 @@ import {
   TestPrivate,
   AccountSetup,
   ResetPassword,
+  Characters,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -44,6 +45,7 @@ function App() {
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
           <Route path="account-setup" element={<AccountSetup />} />
+          <Route path="characters" element={<Characters />} />
         </Route>
       </Route>
     )

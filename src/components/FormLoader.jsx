@@ -5,7 +5,7 @@ import classes from "./formloader.module.css";
  */
 export default function FormLoader() {
   return (
-    <section className="w-full h-screen flex justify-center items-center fixed top-0 left-0 z-30 bg-primary/70">
+    <section className="w-full h-[95vh] flex justify-center items-center fixed bottom-0 left-0 z-10 bg-primary/70">
       <div className={classes.pulse}></div>
     </section>
   );

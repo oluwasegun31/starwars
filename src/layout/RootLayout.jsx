@@ -36,10 +36,10 @@ export default function RootLayout() {
   return (
     <>
       <header
-        className={`z-20 w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto bg-transparent transition-all duration-300 ${
+        className={`z-20 w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto transition-all duration-300 ${
           navIsActive
-            ? "fixed top-2 left-[50%] -translate-x-[50%]"
-            : "relative top-auto left-auto translate-x-0 "
+            ? "fixed top-2 left-[50%] -translate-x-[50%] bg-transparent"
+            : "relative top-auto left-auto translate-x-0 bg-[#710e09]"
         }`}
       >
         <nav
@@ -117,7 +117,15 @@ export default function RootLayout() {
             <p className="font-author lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-semibold">
               Explore the galaxy
             </p>
-            <TbUserHexagon className="sm:text-[26px] text-[22px] cursor-pointer" />
+            {user?.photoURL ? (
+              <img
+                src={user.photoURL}
+                alt="profile"
+                className="sm:w-10 w-8 object-contain rounded-full"
+              />
+            ) : (
+              <TbUserHexagon className="sm:text-[26px] text-[22px] cursor-pointer" />
+            )}
           </div>
           <div className="flex sm:flex-row flex-col sm:justify-between justify-center items-center sm:gap-0 gap-4 font-supreme">
             <div className="flex justify-start items-center sm:gap-4 gap-2 font-medium sm:text-lg text-base">
