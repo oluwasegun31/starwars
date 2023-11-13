@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FormInput, FormError, FormLoader } from "../components";
+import { FormInput, FormError, FormLoader } from "../../components";
 import { useContext, useState } from "react";
-import { FormContext } from "../context";
-import { signupError, signupLogic } from "../authentication/signup";
+import { FormContext } from "../../context";
+import { signupError, signupLogic } from "../../authentication/signup";
 /**
  * SignupPage Component
  * This component presents the user interface for user registration. Users can sign up with their email and password, and error handling is included for a seamless registration process. It also provides a link to the sign-in page for existing users.

@@ -1,9 +1,9 @@
 import { TbUserHexagon } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
-import { retrieveAllImage } from "../firebase/retrieveImages";
-import { updateBasicProfile } from "../firebase/updateProfile";
+import { retrieveAllImage } from "../../firebase/retrieveImages";
+import { updateBasicProfile } from "../../firebase/updateProfile";
 import { useNavigate } from "react-router-dom";
-import { FormError, FormLoader } from "../components";
+import { FormError, FormLoader } from "../../components";
 /**
  * AccountSetup Component - This component handles the account setup process for a user. It allows them to choose a display name and a profile picture.
  * It retrieves available profile pictures from Firebase and updates the user's information accordingly.

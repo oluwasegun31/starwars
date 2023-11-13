@@ -1,17 +1,21 @@
-import anakin from "../assets/anakin.jpg";
-import luke from "../assets/luke.png";
-import ashoka from "../assets/ashoka.jpeg";
-import han from "../assets/han.jpg";
-import { FeaturedHeading } from "../components";
-import tatooine from "../assets/Tatooine.jpg";
-import tatooineWide from "../assets/Tatooine-wide.jpg";
-import bespin from "../assets/Bespin.png";
-import bespinWide from "../assets/Bespin-wide.jpg";
-import kashyyyk from "../assets/Kashyyyk.jpg";
-import kashyyykWide from "../assets/Kashyyyk-wide.png";
-import stewjon from "../assets/Stewjon.png";
-import stewjonWide from "../assets/Stewjon-wide.jpg";
-import starDestroyer from "../assets/Star-Destroyer.png";
+// characters images
+import anakin from "../../assets/anakin.jpg";
+import luke from "../../assets/luke.png";
+import ashoka from "../../assets/ashoka.jpeg";
+import han from "../../assets/han.jpg";
+// components
+import { FeaturedHeading } from "../../components";
+// planets images
+import tatooine from "../../assets/Tatooine.jpg";
+import tatooineWide from "../../assets/Tatooine-wide.jpg";
+import bespin from "../../assets/Bespin.png";
+import bespinWide from "../../assets/Bespin-wide.jpg";
+import kashyyyk from "../../assets/Kashyyyk.jpg";
+import kashyyykWide from "../../assets/Kashyyyk-wide.png";
+import stewjon from "../../assets/Stewjon.png";
+import stewjonWide from "../../assets/Stewjon-wide.jpg";
+// starship images
+import starDestroyer from "../../assets/Star-Destroyer.png";
 /**
  * HomePage Component
  * This component provides the landing page when the user first enters the site.

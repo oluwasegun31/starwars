@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useMemo, useRef } from "react";
-import { EmptyError, FormLoader, CharacterCard } from "../components";
-import { StarWarsContext } from "../context";
+import { EmptyError, FormLoader, CharacterCard } from "../../components";
+import { StarWarsContext } from "../../context";
 import { BsSearch } from "react-icons/bs";
 import { useSearchParams } from "react-router-dom";
 /**

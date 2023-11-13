@@ -1,10 +1,10 @@
-import HomePage from "./HomePage";
-import SigupPage from "./Signup";
-import SigninPage from "./Signin";
+import HomePage from "./public/HomePage";
+import SigupPage from "./public/Signup";
+import SigninPage from "./public/Signin";
 import TestPrivate from "./TestPrivate";
-import AccountSetup from "./AccountSetup";
-import ResetPassword from "./ResetPassword";
-import Characters from "./Characters";
+import AccountSetup from "./private/AccountSetup";
+import ResetPassword from "./private/ResetPassword";
+import Characters from "./private/Characters";
 
 export {
   HomePage,

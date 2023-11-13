@@ -2,8 +2,8 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { BsArrowLeft } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
-import { passwordResetLogic } from "../firebase/passwordReset";
-import { FormError } from "../components";
+import { passwordResetLogic } from "../../firebase/passwordReset";
+import { FormError } from "../../components";
 /**
  * ResetPassword Component
  * This component allows users to reset their password. It takes an email input,
