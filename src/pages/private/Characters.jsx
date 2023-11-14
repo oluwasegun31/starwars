@@ -8,22 +8,25 @@ import { useSearchParams } from "react-router-dom";
  * This component displays a list of Star Wars characters and provides search functionality.
  */
 export default function Characters() {
+  // Context to access Star Wars characters data
   const { isLoading, characters, showCharacters } = useContext(StarWarsContext);
+  // UseRef hook to manage input field for search term
   const searchRef = useRef();
+  // useSearchParams hook to access search query from URL
   const [searchParams, setSearchParams] = useSearchParams();
   const searchTerm = searchParams.get("name") || "";
-
+  // Hook to fetch characters and set initial search term
   useEffect(() => {
     showCharacters();
     searchRef.current.value = searchTerm;
   }, []);
-
+  // useMemo hook to memoize filtered array of characters for performance optimization
   const filteredArr = useMemo(() => {
     return characters.filter((item) => {
       return item.name.toLowerCase().includes(searchTerm);
     });
   }, [characters, searchTerm]);
-
+  // useCallback hook to memoize search function for performance optimization
   const searchCharacters = useCallback(() => {
     const name = searchRef.current.value;
     name
@@ -36,7 +39,7 @@ export default function Characters() {
         )
       : setSearchParams({});
   }, []);
-
+  // Update search term when input field is changed
   const onSearchChange = () => {
     searchRef.current.value === "" ? setSearchParams({}) : null;
   };

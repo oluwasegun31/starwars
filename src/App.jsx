@@ -14,9 +14,11 @@ import {
   AccountSetup,
   ResetPassword,
   Characters,
+  CharacterDetails,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
+import { EmptyError } from "./components";
 
 function App() {
   const router = createBrowserRouter(
@@ -45,7 +47,14 @@ function App() {
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
           <Route path="account-setup" element={<AccountSetup />} />
-          <Route path="characters" element={<Characters />} />
+          <Route path="characters">
+            <Route index element={<Characters />} />
+            <Route
+              path=":id"
+              element={<CharacterDetails />}
+              errorElement={<EmptyError data={"character"} />}
+            />
+          </Route>
         </Route>
       </Route>
     )
