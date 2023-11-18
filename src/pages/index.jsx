@@ -10,6 +10,7 @@ import ResetPassword from "./private/ResetPassword";
 import Characters from "./private/Characters";
 import CharacterDetails from "./private/CharactersDetails";
 import Planets from "./private/Planets";
+import PlanetsDetails from "./private/PlanetsDetails";
 
 export {
   HomePage,
@@ -21,4 +22,5 @@ export {
   Characters,
   CharacterDetails,
   Planets,
+  PlanetsDetails,
 };

@@ -7,6 +7,7 @@ import CharacterCard from "./CharacterCard";
 import CharacterDetailsCard from "./CharacterDetailsCard";
 import SearchInput from "./SearchInput";
 import PlanetCard from "./PlanetCard";
+import PlanetDetailsCard from "./PlanetDetailsCard";
 
 export {
   FeaturedHeading,
@@ -18,4 +19,5 @@ export {
   CharacterDetailsCard,
   SearchInput,
   PlanetCard,
+  PlanetDetailsCard,
 };

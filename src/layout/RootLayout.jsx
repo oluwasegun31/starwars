@@ -33,6 +33,10 @@ export default function RootLayout() {
       window.scrollY > 100 ? setNavIsActive(true) : setNavIsActive(false);
     });
   });
+  // Function that close the navbar after 1 sec
+  const closeNavBar = () => {
+    setTimeout(() => setIsOpen(false), 1000);
+  };
   return (
     <>
       <header
@@ -59,6 +63,7 @@ export default function RootLayout() {
               className={({ isActive }) =>
                 isActive ? navActive.active : navActive.notActive
               }
+              onClick={() => closeNavBar()}
             >
               characters
             </NavLink>
@@ -67,6 +72,7 @@ export default function RootLayout() {
               className={({ isActive }) =>
                 isActive ? navActive.active : navActive.notActive
               }
+              onClick={() => closeNavBar()}
             >
               planets
             </NavLink>
@@ -75,6 +81,7 @@ export default function RootLayout() {
               className={({ isActive }) =>
                 isActive ? navActive.active : navActive.notActive
               }
+              onClick={() => closeNavBar()}
             >
               starships
             </NavLink>

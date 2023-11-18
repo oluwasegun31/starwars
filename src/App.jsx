@@ -16,6 +16,7 @@ import {
   Characters,
   CharacterDetails,
   Planets,
+  PlanetsDetails,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -45,6 +46,7 @@ function App() {
           />
           <Route path="reset-password" element={<ResetPassword />} />
         </Route>
+
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
           <Route path="account-setup" element={<AccountSetup />} />
@@ -58,6 +60,11 @@ function App() {
           </Route>
           <Route path="planets">
             <Route index element={<Planets />} />
+            <Route
+              path=":id"
+              element={<PlanetsDetails />}
+              errorElement={<EmptyError data={"planet"} />}
+            />
           </Route>
         </Route>
       </Route>
