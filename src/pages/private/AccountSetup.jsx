@@ -22,6 +22,8 @@ export default function AccountSetup() {
   // navigate function
   const navigate = useNavigate();
   useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
     // Retrieve all the image URLs from Firebase
     const retrievedImages = async () => {
       const imagesUrl = await retrieveAllImage();

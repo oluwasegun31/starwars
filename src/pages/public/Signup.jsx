@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FormInput, FormError, FormLoader } from "../../components";
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import { FormContext } from "../../context";
 import { signupError, signupLogic } from "../../authentication/signup";
 /**
@@ -8,6 +8,10 @@ import { signupError, signupLogic } from "../../authentication/signup";
  * This component presents the user interface for user registration. Users can sign up with their email and password, and error handling is included for a seamless registration process. It also provides a link to the sign-in page for existing users.
  */
 export default function SigupPage() {
+  useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
+  }, []);
   // Get form input context and navigate function from FormContext and router-dom respectfully
   const {
     emailRef,

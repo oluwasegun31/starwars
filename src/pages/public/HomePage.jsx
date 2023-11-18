@@ -16,11 +16,16 @@ import stewjon from "../../assets/Stewjon.png";
 import stewjonWide from "../../assets/Stewjon-wide.jpg";
 // starship images
 import starDestroyer from "../../assets/Star-Destroyer.png";
+import { useEffect } from "react";
 /**
  * HomePage Component
  * This component provides the landing page when the user first enters the site.
  */
 export default function HomePage() {
+  useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Landing section */}

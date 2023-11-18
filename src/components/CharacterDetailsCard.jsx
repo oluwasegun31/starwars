@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
-
+/**
+ * CharacterDetailsCard Component
+ * This component displays detailed information about a specific character.
+ * @component
+ * @param {Object} character - The character object containing detailed information.
+ * @returns {JSX.Element} - Detailed card view of the character.
+ */
 export default function CharacterDetailsCard({ character }) {
+  // Destructure character data
   const {
     name,
-    id,
     image,
     birth_year,
     eye_color,
@@ -47,5 +53,6 @@ export default function CharacterDetailsCard({ character }) {
 }
 
 CharacterDetailsCard.propTypes = {
+  // Validate character prop type
   character: PropTypes.object,
 };

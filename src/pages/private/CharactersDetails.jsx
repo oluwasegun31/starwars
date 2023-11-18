@@ -18,6 +18,8 @@ export default function CharacterDetails() {
   const navigate = useNavigate();
   // Fetch characters if not already fetched
   useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
     showCharacters();
   }, []);
   // Find the character with the matching ID from the characters list

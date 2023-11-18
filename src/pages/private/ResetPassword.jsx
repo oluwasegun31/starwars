@@ -1,7 +1,7 @@
 import { MdOutlineMailOutline } from "react-icons/md";
 import { BsArrowLeft } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { passwordResetLogic } from "../../firebase/passwordReset";
 import { FormError } from "../../components";
 /**
@@ -10,6 +10,10 @@ import { FormError } from "../../components";
  * sends a reset link to the user's email, and navigates back to the sign-in page.
  */
 export default function ResetPassword() {
+  useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
+  }, []);
   // Create state variable to store error message
   const [isError, setIsError] = useState(null);
   // Get navigation function from router-dom and a ref to access the email input field

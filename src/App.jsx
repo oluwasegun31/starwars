@@ -15,6 +15,7 @@ import {
   ResetPassword,
   Characters,
   CharacterDetails,
+  Planets,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -54,6 +55,9 @@ function App() {
               element={<CharacterDetails />}
               errorElement={<EmptyError data={"character"} />}
             />
+          </Route>
+          <Route path="planets">
+            <Route index element={<Planets />} />
           </Route>
         </Route>
       </Route>

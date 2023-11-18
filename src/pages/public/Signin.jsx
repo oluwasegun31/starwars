@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FormError, FormInput, FormLoader } from "../../components";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FormContext } from "../../context";
 import { signinError, signinLogic } from "../../authentication/siginin";
 /**
@@ -22,6 +22,10 @@ export default function SigninPage() {
 
   // Function to handle the signin with email and password form
   const signinForm = async () => {
+    useEffect(() => {
+      // Scroll to the top of the page on every URL change
+      window.scrollTo(0, 0);
+    }, []);
     // Get the email and password values from the input fields
     const emailValue = emailRef.current.value;
     const passwordValue = passwordRef.current.value;

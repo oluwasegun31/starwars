@@ -5,6 +5,8 @@ import FormLoader from "./FormLoader";
 import EmptyError from "./EmptyError";
 import CharacterCard from "./CharacterCard";
 import CharacterDetailsCard from "./CharacterDetailsCard";
+import SearchInput from "./SearchInput";
+import PlanetCard from "./PlanetCard";
 
 export {
   FeaturedHeading,
@@ -14,4 +16,6 @@ export {
   EmptyError,
   CharacterCard,
   CharacterDetailsCard,
+  SearchInput,
+  PlanetCard,
 };
