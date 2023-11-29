@@ -1,5 +1,10 @@
 import { useNavigate } from "react-router-dom";
-
+/**
+ * PlanetCard component displays information about a planet.
+ * @component
+ * @param {Object} planet - Planet data object containing properties like id, name, image.
+ * @returns {JSX.Element} - Detailed information about the planet.
+ */
 export default function PlanetCard({ planet }) {
   const { image, id, name } = planet;
   const navigate = useNavigate();

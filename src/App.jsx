@@ -17,6 +17,8 @@ import {
   CharacterDetails,
   Planets,
   PlanetsDetails,
+  Starships,
+  StarshipDetails,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -64,6 +66,14 @@ function App() {
               path=":id"
               element={<PlanetsDetails />}
               errorElement={<EmptyError data={"planet"} />}
+            />
+          </Route>
+          <Route path="starships">
+            <Route index element={<Starships />} />
+            <Route
+              path=":id"
+              element={<StarshipDetails />}
+              errorElement={<EmptyError data={"starship"} />}
             />
           </Route>
         </Route>

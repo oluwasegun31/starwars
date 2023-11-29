@@ -23,31 +23,57 @@ export default function CharacterDetailsCard({ character }) {
     vehicles,
   } = character;
   return (
-    <section className="font-author flex flex-col sm:gap-20 gap-10 md:px-6 px-3">
-      <p className="w-full text-center lg:text-9xl sm:text-8xl text-6xl font-medium mix-blend-difference opacity-60 z-20">
+    <section className="w-full font-author flex flex-col justify-center items-center md:px-6 px-3">
+      <p className="w-full text-center lg:text-[7.2rem] sm:text-8xl text-6xl sm:leading-[0.6] leading-none font-medium mix-blend-difference opacity-60 z-20">
         {name}
       </p>
-      <section className="flex sm:flex-row flex-col sm:justify-between justify-center items-center lg:text-3xl text-2xl font-medium capitalize">
-        <div>
-          <p>Gender: {gender}</p>
-          <p>Birth Year: {birth_year}</p>
-          <p>Height: {height}cm</p>
-          <p>Mass: {mass}kg</p>
-          <p>Skin color: {skin_color}</p>
-        </div>
-        <div>
-          <p>eye color: {eye_color}</p>
-          <p>hair color: {hair_color}</p>
-          <p>homeworld: {homeworld}</p>
-          <p>starship: {starships[0]}</p>
-          <p>Vehicles: {vehicles[0]}</p>
-        </div>
-      </section>
       <img
         src={image}
         alt={`Portriat of ${name}`}
-        className="md:absolute relative  bottom-0 left-[50%] -translate-x-[50%] lg:w-[440px] md:w-[400px] w-[350px] object-contain"
+        className="md:w-[300px] w-[230px] object-contain"
       />
+      <section className="xl:w-[95%] sm:w-[98%] w-[90%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 mt-4 capitalize leading-[1]">
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">Gender</p>
+          <p className="font-medium">{gender}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">birth year</p>
+          <p className="font-medium">{birth_year}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">height</p>
+          <p className="font-medium">{height} cm</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">mass</p>
+          <p className="font-medium">{mass} kg</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">homeworld</p>
+          <p className="font-medium">{homeworld}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">skin color</p>
+          <p className="font-medium">{skin_color}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">eye color</p>
+          <p className="font-medium">{eye_color}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">hair color</p>
+          <p className="font-medium">{hair_color}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">starship</p>
+          <p className="font-medium">{starships[0]}</p>
+        </div>
+        <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">
+          <p className="italic font-normal opacity-75">vehicle</p>
+          <p className="font-medium">{vehicles[0]}</p>
+        </div>
+      </section>
     </section>
   );
 }

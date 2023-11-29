@@ -19,13 +19,12 @@ export default function SigninPage() {
   } = useContext(FormContext);
   const navigate = useNavigate();
   const location = useLocation();
-
+  useEffect(() => {
+    // Scroll to the top of the page on every URL change
+    window.scrollTo(0, 0);
+  }, []);
   // Function to handle the signin with email and password form
   const signinForm = async () => {
-    useEffect(() => {
-      // Scroll to the top of the page on every URL change
-      window.scrollTo(0, 0);
-    }, []);
     // Get the email and password values from the input fields
     const emailValue = emailRef.current.value;
     const passwordValue = passwordRef.current.value;

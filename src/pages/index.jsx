@@ -11,6 +11,8 @@ import Characters from "./private/Characters";
 import CharacterDetails from "./private/CharactersDetails";
 import Planets from "./private/Planets";
 import PlanetsDetails from "./private/PlanetsDetails";
+import Starships from "./private/Starships";
+import StarshipDetails from "./private/StarshipsDetails";
 
 export {
   HomePage,
@@ -23,4 +25,6 @@ export {
   CharacterDetails,
   Planets,
   PlanetsDetails,
+  Starships,
+  StarshipDetails,
 };
