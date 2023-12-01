@@ -19,6 +19,8 @@ import {
   PlanetsDetails,
   Starships,
   StarshipDetails,
+  Settings,
+  Error404,
 } from "./pages";
 import { FormProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
@@ -77,6 +79,8 @@ function App() {
             />
           </Route>
         </Route>
+        <Route path="settings" element={<Settings />} />
+        <Route path="*" element={<Error404 />} />
       </Route>
     )
   );

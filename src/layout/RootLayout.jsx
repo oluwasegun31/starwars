@@ -96,7 +96,10 @@ export default function RootLayout() {
             />
           </div>
 
-          <div className="px-4 flex justify-center items-center gap-4">
+          <div
+            className="px-4 flex justify-center items-center gap-4 cursor-pointer"
+            onClick={() => navigate("/settings")}
+          >
             {user?.photoURL ? (
               <img
                 src={user.photoURL}
@@ -129,9 +132,13 @@ export default function RootLayout() {
                 src={user.photoURL}
                 alt="profile"
                 className="sm:w-10 w-8 object-contain rounded-full"
+                onClick={() => navigate("/settings")}
               />
             ) : (
-              <TbUserHexagon className="sm:text-[26px] text-[22px] cursor-pointer" />
+              <TbUserHexagon
+                className="sm:text-[26px] text-[22px] cursor-pointer"
+                onClick={() => navigate("/settings")}
+              />
             )}
           </div>
           <div className="flex sm:flex-row flex-col sm:justify-between justify-center items-center sm:gap-0 gap-4 font-supreme">
@@ -140,6 +147,7 @@ export default function RootLayout() {
                 src={logo}
                 alt="logo"
                 className="sm:w-10 w-6 object-contain"
+                onClick={() => navigate("/")}
               />
               <p>privacy policy</p>
               <p>.</p>

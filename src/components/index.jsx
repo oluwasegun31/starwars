@@ -10,6 +10,8 @@ import PlanetCard from "./PlanetCard";
 import PlanetDetailsCard from "./PlanetDetailsCard";
 import StarshipCard from "./StarshipCard";
 import StarshipDetailsCard from "./StarshipDetailsCard";
+import PublicSettings from "./PublicSettings";
+import FormSuccess from "./FormSuccess";
 
 export {
   FeaturedHeading,
@@ -24,4 +26,6 @@ export {
   PlanetDetailsCard,
   StarshipCard,
   StarshipDetailsCard,
+  PublicSettings,
+  FormSuccess,
 };
