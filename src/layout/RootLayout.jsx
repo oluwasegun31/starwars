@@ -42,7 +42,7 @@ export default function RootLayout() {
       <header
         className={`z-20 w-full py-2 px-4 font-supreme font-light max-w-[1400px] mx-auto transition-all duration-300 ${
           navIsActive
-            ? "fixed top-2 left-[50%] -translate-x-[50%] bg-transparent"
+            ? "fixed sm:top-2 top-6 left-[50%] -translate-x-[50%] bg-transparent"
             : "relative top-auto left-auto translate-x-0 bg-[#710e09]"
         }`}
       >
@@ -55,7 +55,9 @@ export default function RootLayout() {
         >
           <div
             className={`text-[20px] capitalize flex justify-start items-center gap-6 md:relative md:top-auto md:right-auto md:bg-transparent md:py-0 md:flex-row md:w-auto w-[200px] flex-col py-10 bg-tertiary absolute top-14 transition-all duration-300 ${
-              isOpen ? "right-5" : "-right-full"
+              isOpen
+                ? "right-5 opacity-100"
+                : "right-0 md:opacity-100 opacity-0"
             }`}
           >
             <NavLink
@@ -96,18 +98,19 @@ export default function RootLayout() {
             />
           </div>
 
-          <div
-            className="px-4 flex justify-center items-center gap-4 cursor-pointer"
-            onClick={() => navigate("/settings")}
-          >
+          <div className="px-4 flex justify-center items-center gap-4 cursor-pointer">
             {user?.photoURL ? (
               <img
                 src={user.photoURL}
                 alt="profile"
                 className="sm:w-10 w-8 object-contain rounded-full"
+                onClick={() => navigate("/settings")}
               />
             ) : (
-              <TbUserHexagon className="text-[26px] cursor-pointer" />
+              <TbUserHexagon
+                className="text-[26px] cursor-pointer"
+                onClick={() => navigate("/settings")}
+              />
             )}
             <div
               className="text-2xl md:hidden block cursor-pointer"
@@ -118,7 +121,7 @@ export default function RootLayout() {
           </div>
         </nav>
       </header>
-      <main className="max-w-[1400px] mx-auto ">
+      <main className="max-w-[1400px] mx-auto overflow-x-hidden">
         <Outlet />
       </main>
       <footer className="w-full md:px-12 sm:px-8 px-3 max-w-[1400px] mx-auto">
