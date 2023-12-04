@@ -3,3 +3,6 @@ body{
     color: #FAE3CF;
     overflow-x: hidden;
 }
+.landing-img{
+    background-image: url("./assets/landing-bg.png");
+}

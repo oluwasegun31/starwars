@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <>
       {/* Landing section */}
-      <section className="bg-landing bg-center bg-cover w-full h-screen z-0 py-4 flex flex-col justify-around items-center">
+      <section className="landing-img bg-center bg-cover w-full h-screen z-0 py-4 flex flex-col justify-around items-center">
         <section className="text-center">
           <p className="md:text-2xl text-lg font-supreme italic opacity-75">
             The saftest way to
