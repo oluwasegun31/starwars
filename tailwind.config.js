@@ -16,9 +16,6 @@ export default {
         tertiary: "#FAE3CF",
         alternate: "#0A0F24"
       },
-      backgroundImage: {
-        landing: "url('./src/assets/landing-bg.png')"
-      }
     },
   },
   plugins: [],

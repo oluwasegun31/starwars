@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import starship from "../../assets/starship.png";
+import starship from "../../assets/starship.webp";
 export default function Error404() {
   const navigate = useNavigate();
   return (

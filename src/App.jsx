@@ -2,6 +2,7 @@ import "./App.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -22,7 +23,7 @@ import {
   Settings,
   Error404,
 } from "./pages";
-import { FormProvider } from "./context";
+import { FormProvider, StarWarsProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
 import { EmptyError } from "./components";
 
@@ -54,7 +55,14 @@ function App() {
         <Route element={<PrivateLayout />}>
           <Route path="test" element={<TestPrivate />} />
           <Route path="account-setup" element={<AccountSetup />} />
-          <Route path="characters">
+          <Route
+            path="characters"
+            element={
+              <StarWarsProvider>
+                <Outlet />
+              </StarWarsProvider>
+            }
+          >
             <Route index element={<Characters />} />
             <Route
               path=":id"
@@ -62,7 +70,14 @@ function App() {
               errorElement={<EmptyError data={"character"} />}
             />
           </Route>
-          <Route path="planets">
+          <Route
+            path="planets"
+            element={
+              <StarWarsProvider>
+                <Outlet />
+              </StarWarsProvider>
+            }
+          >
             <Route index element={<Planets />} />
             <Route
               path=":id"
@@ -70,7 +85,14 @@ function App() {
               errorElement={<EmptyError data={"planet"} />}
             />
           </Route>
-          <Route path="starships">
+          <Route
+            path="starships"
+            element={
+              <StarWarsProvider>
+                <Outlet />
+              </StarWarsProvider>
+            }
+          >
             <Route index element={<Starships />} />
             <Route
               path=":id"

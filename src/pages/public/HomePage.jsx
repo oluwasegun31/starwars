@@ -1,21 +1,21 @@
 // characters images
-import anakin from "../../assets/anakin.jpg";
-import luke from "../../assets/luke.png";
-import ashoka from "../../assets/ashoka.jpeg";
-import han from "../../assets/han.jpg";
+import anakin from "../../assets/anakin.webp";
+import luke from "../../assets/luke.webp";
+import ashoka from "../../assets/ashoka.webp";
+import han from "../../assets/han.webp";
 // components
 import { FeaturedHeading } from "../../components";
 // planets images
-import tatooine from "../../assets/Tatooine.jpg";
-import tatooineWide from "../../assets/Tatooine-wide.jpg";
-import bespin from "../../assets/Bespin.png";
-import bespinWide from "../../assets/Bespin-wide.jpg";
-import kashyyyk from "../../assets/Kashyyyk.jpg";
-import kashyyykWide from "../../assets/Kashyyyk-wide.png";
-import stewjon from "../../assets/Stewjon.png";
-import stewjonWide from "../../assets/Stewjon-wide.jpg";
+import tatooine from "../../assets/Tatooine.webp";
+import tatooineWide from "../../assets/Tatooine-wide.webp";
+import bespin from "../../assets/Bespin.webp";
+import bespinWide from "../../assets/Bespin-wide.webp";
+import kashyyyk from "../../assets/Kashyyyk.webp";
+import kashyyykWide from "../../assets/Kashyyyk-wide.webp";
+import stewjon from "../../assets/Stewjon.webp";
+import stewjonWide from "../../assets/Stewjon-wide.webp";
 // starship images
-import starDestroyer from "../../assets/Star-Destroyer.png";
+import starDestroyer from "../../assets/Star-Destroyer.webp";
 import { useEffect } from "react";
 /**
  * HomePage Component

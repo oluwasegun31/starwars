@@ -95,6 +95,8 @@ export default function RootLayout() {
               alt="logo"
               className="md:w-10 w-8 md:h-10 h-8 object-contain cursor-pointer"
               onClick={() => navigate("/")}
+              width={40}
+              height={40}
             />
           </div>
 
@@ -105,6 +107,8 @@ export default function RootLayout() {
                 alt="profile"
                 className="sm:w-10 w-8 object-contain rounded-full"
                 onClick={() => navigate("/settings")}
+                width={40}
+                height={40}
               />
             ) : (
               <TbUserHexagon
@@ -136,6 +140,8 @@ export default function RootLayout() {
                 alt="profile"
                 className="sm:w-10 w-8 object-contain rounded-full"
                 onClick={() => navigate("/settings")}
+                width={40}
+                height={40}
               />
             ) : (
               <TbUserHexagon
@@ -151,6 +157,8 @@ export default function RootLayout() {
                 alt="logo"
                 className="sm:w-10 w-6 object-contain"
                 onClick={() => navigate("/")}
+                width={36}
+                height={36}
               />
               <p>privacy policy</p>
               <p>.</p>

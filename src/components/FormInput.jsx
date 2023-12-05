@@ -2,7 +2,7 @@ import { MdOutlineMailOutline, MdPassword } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { FormContext } from "../context";
 /**
  * FormInput Component
@@ -12,6 +12,12 @@ export default function FormInput({ formType, onClick }) {
   // form input context
   const { emailRef, passwordRef, googleAuthentication, githubAuthentication } =
     useContext(FormContext);
+  // toogle pasword visibility
+  const showPassword = useCallback(() => {
+    passwordRef.current.type === "password"
+      ? (passwordRef.current.type = "text")
+      : (passwordRef.current.type = "password");
+  }, []);
 
   return (
     <form className="sm:w-[70%] w-[95%] mx-auto mt-5 flex flex-col gap-5 justify-start items-start px-4">
@@ -24,6 +30,8 @@ export default function FormInput({ formType, onClick }) {
         </label>
         <input
           type="email"
+          name="email"
+          id="email"
           className="bg-transparent border-b border-b-tertiary/40 w-full outline-none focus:border-b-tertiary/70 sm:text-2xl text-lg"
           ref={emailRef}
         />
@@ -31,17 +39,23 @@ export default function FormInput({ formType, onClick }) {
       </div>
       <div className="flex flex-col justify-start items-start gap-2 w-full relative">
         <label
-          htmlFor="email"
+          htmlFor="password"
           className="w-full sm:text-2xl text-lg font-medium capitalize opacity-70"
         >
           password*
         </label>
         <input
           type="password"
+          name="password"
+          id="password"
+          autoComplete="true"
           className="bg-transparent border-b border-b-tertiary/40 w-full outline-none focus:border-b-tertiary/70 sm:text-2xl text-lg"
           ref={passwordRef}
         />
-        <MdPassword className="absolute bottom-2 right-2 text-[20px]" />
+        <MdPassword
+          className="absolute bottom-2 right-2 text-[20px]"
+          onClick={() => showPassword()}
+        />
       </div>
       <button
         type="button"
