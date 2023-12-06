@@ -1,8 +1,27 @@
-# React + Vite
+# Starwars
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Firebase](https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png)](https://firebase.google.com/)
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Built With](#built-with)
+
+## Introduction
+
+A simple firebase project to learn the basics
+
+## Features
+
+- Authentication
+- Characters, Starships, Planets details
+- Updating Profile
+
+## Built With
+
+- React (vite)
+- Tailwind CSS
+- CSS
+- Firebase
