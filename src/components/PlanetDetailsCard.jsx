@@ -39,6 +39,8 @@ export default function PlanetDetailsCard({ planet }) {
         src={image}
         alt={`portriat of ${name}`}
         className="w-[350px] object-contain"
+        width={350}
+        height={350}
       />
       <section className="xl:w-[95%] sm:w-[98%] w-[90%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
         <div className="flex justify-start items-center gap-x-12 w-full bg-primary/20 backdrop-blur-3xl drop-shadow-2xl py-2 px-4">

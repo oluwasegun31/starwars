@@ -1,26 +1,24 @@
+import { lazy } from "react";
 // Public Pages
-import HomePage from "./public/HomePage";
-import SigupPage from "./public/Signup";
-import SigninPage from "./public/Signin";
-import Error404 from "./public/Error404";
-// Test Page
-import TestPrivate from "./TestPrivate";
+const HomePage = lazy(() => import("./public/HomePage"));
+const SigupPage = lazy(() => import("./public/Signup"));
+const SigninPage = lazy(() => import("./public/Signin"));
+const Error404 = lazy(() => import("./public/Error404"));
 // Private Pages
-import AccountSetup from "./private/AccountSetup";
-import ResetPassword from "./private/ResetPassword";
-import Characters from "./private/Characters";
-import CharacterDetails from "./private/CharactersDetails";
-import Planets from "./private/Planets";
-import PlanetsDetails from "./private/PlanetsDetails";
-import Starships from "./private/Starships";
-import StarshipDetails from "./private/StarshipsDetails";
-import Settings from "./private/Settings";
+const AccountSetup = lazy(() => import("./private/AccountSetup"));
+const ResetPassword = lazy(() => import("./private/ResetPassword"));
+const Characters = lazy(() => import("./private/Characters"));
+const CharacterDetails = lazy(() => import("./private/CharactersDetails"));
+const Planets = lazy(() => import("./private/Planets"));
+const PlanetsDetails = lazy(() => import("./private/PlanetsDetails"));
+const Starships = lazy(() => import("./private/Starships"));
+const StarshipDetails = lazy(() => import("./private/StarshipsDetails"));
+const Settings = lazy(() => import("./private/Settings"));
 
 export {
   HomePage,
   SigupPage,
   SigninPage,
-  TestPrivate,
   AccountSetup,
   ResetPassword,
   Characters,

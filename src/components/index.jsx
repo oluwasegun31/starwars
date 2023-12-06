@@ -1,17 +1,20 @@
+import { lazy } from "react";
+// components to load on first mount
 import FeaturedHeading from "./FeaturedHeading";
-import FormInput from "./FormInput";
 import FormError from "./FormError";
 import FormLoader from "./FormLoader";
 import EmptyError from "./EmptyError";
-import CharacterCard from "./CharacterCard";
-import CharacterDetailsCard from "./CharacterDetailsCard";
-import SearchInput from "./SearchInput";
-import PlanetCard from "./PlanetCard";
-import PlanetDetailsCard from "./PlanetDetailsCard";
-import StarshipCard from "./StarshipCard";
-import StarshipDetailsCard from "./StarshipDetailsCard";
-import PublicSettings from "./PublicSettings";
 import FormSuccess from "./FormSuccess";
+import SearchInput from "./SearchInput";
+// component to lazy load
+const FormInput = lazy(() => import("./FormInput"));
+const CharacterCard = lazy(() => import("./CharacterCard"));
+const CharacterDetailsCard = lazy(() => import("./CharacterDetailsCard"));
+const PlanetCard = lazy(() => import("./PlanetCard"));
+const PlanetDetailsCard = lazy(() => import("./PlanetDetailsCard"));
+const StarshipCard = lazy(() => import("./StarshipCard"));
+const StarshipDetailsCard = lazy(() => import("./StarshipDetailsCard"));
+const PublicSettings = lazy(() => import("./PublicSettings"));
 
 export {
   FeaturedHeading,

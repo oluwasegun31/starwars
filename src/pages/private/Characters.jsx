@@ -1,4 +1,11 @@
-import { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import {
   EmptyError,
   FormLoader,
@@ -49,11 +56,13 @@ export default function Characters() {
       ) : filteredArr.length === 0 ? (
         <EmptyError data={"characters"} />
       ) : (
-        <section className="xl:w-[90%] md:w-[85%] w-[92%]  mx-auto grid xl:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-4 gap-2 mt-10">
-          {filteredArr.map((character) => {
-            return <CharacterCard key={character.id} character={character} />;
-          })}
-        </section>
+        <Suspense fallback={<p>Loading...</p>}>
+          <section className="xl:w-[90%] md:w-[85%] w-[92%]  mx-auto grid xl:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-4 gap-2 mt-10">
+            {filteredArr.map((character) => {
+              return <CharacterCard key={character.id} character={character} />;
+            })}
+          </section>
+        </Suspense>
       )}
     </section>
   );

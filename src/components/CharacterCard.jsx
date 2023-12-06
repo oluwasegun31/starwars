@@ -23,6 +23,8 @@ export default function CharacterCard({ character }) {
         src={image}
         alt={`Portrait of ${name}`}
         className="group-hover:scale-105 transition-all duration-300 w-[80%] object-cover"
+        width={250}
+        height={310}
       />
     </div>
   );

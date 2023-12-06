@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import { GlobalUserContext } from "../../context";
 // Import components
 import {
@@ -121,7 +121,9 @@ export default function Settings() {
           </form>
         </section>
       ) : (
-        <PublicSettings />
+        <Suspense fallback={<p>Loading....</p>}>
+          <PublicSettings />
+        </Suspense>
       )}
       {isLoading && <FormLoader />}
       {isError && <FormError errMessage={updateProfileError} />}

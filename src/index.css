@@ -8,3 +8,20 @@ a{
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 input, textarea, button, select, svg{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 a:focus, a:visited, a:active{outline: none;}
+/* Hide see button for all browser */
+/* For modern browsers */
+input[type="password"]::-webkit-visible-password {
+    display: none;
+}
+/* For Firefox */
+input[type="password"]::-moz-visible-password {
+    display: none;
+}  
+/* For Internet Explorer */
+  input[type="password"]::-ms-reveal {
+    display: none;
+}  
+/* Standard */
+input[type="password"]::-ms-clear {
+    display: none;
+}

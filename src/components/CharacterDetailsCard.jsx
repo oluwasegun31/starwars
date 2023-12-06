@@ -31,6 +31,8 @@ export default function CharacterDetailsCard({ character }) {
         src={image}
         alt={`Portriat of ${name}`}
         className="md:w-[300px] w-[230px] object-contain"
+        width={300}
+        height={350}
       />
       <section className="xl:w-[95%] sm:w-[98%] w-[90%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 mt-4 capitalize leading-[1]">
         <div className="bg-primary/20 backdrop-blur-3xl drop-shadow-2xl flex flex-col justify-start items-start sm:gap-2 gap-1 px-4 py-2 sm:text-3xl text-[20px]">

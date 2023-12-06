@@ -11,7 +11,6 @@ import {
   HomePage,
   SigupPage,
   SigninPage,
-  TestPrivate,
   AccountSetup,
   ResetPassword,
   Characters,
@@ -25,13 +24,21 @@ import {
 } from "./pages";
 import { FormProvider, StarWarsProvider } from "./context";
 import PrivateLayout from "./layout/PrivateLayout";
-import { EmptyError } from "./components";
+import { EmptyError, FormLoader } from "./components";
+import { Suspense } from "react";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<HomePage />} />
+        <Route
+          index
+          element={
+            <Suspense fallback={<FormLoader />}>
+              <HomePage />
+            </Suspense>
+          }
+        />
         <Route
           path="signup"
           element={
@@ -44,17 +51,32 @@ function App() {
           <Route
             index
             element={
-              <FormProvider>
-                <SigninPage />
-              </FormProvider>
+              <Suspense fallback={<FormLoader />}>
+                <FormProvider>
+                  <SigninPage />
+                </FormProvider>
+              </Suspense>
             }
           />
-          <Route path="reset-password" element={<ResetPassword />} />
+          <Route
+            path="reset-password"
+            element={
+              <Suspense fallback={<FormLoader />}>
+                <ResetPassword />
+              </Suspense>
+            }
+          />
         </Route>
 
         <Route element={<PrivateLayout />}>
-          <Route path="test" element={<TestPrivate />} />
-          <Route path="account-setup" element={<AccountSetup />} />
+          <Route
+            path="account-setup"
+            element={
+              <Suspense fallback={<FormLoader />}>
+                <AccountSetup />
+              </Suspense>
+            }
+          />
           <Route
             path="characters"
             element={
@@ -63,10 +85,21 @@ function App() {
               </StarWarsProvider>
             }
           >
-            <Route index element={<Characters />} />
+            <Route
+              index
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <Characters />
+                </Suspense>
+              }
+            />
             <Route
               path=":id"
-              element={<CharacterDetails />}
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <CharacterDetails />
+                </Suspense>
+              }
               errorElement={<EmptyError data={"character"} />}
             />
           </Route>
@@ -78,10 +111,21 @@ function App() {
               </StarWarsProvider>
             }
           >
-            <Route index element={<Planets />} />
+            <Route
+              index
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <Planets />
+                </Suspense>
+              }
+            />
             <Route
               path=":id"
-              element={<PlanetsDetails />}
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <PlanetsDetails />
+                </Suspense>
+              }
               errorElement={<EmptyError data={"planet"} />}
             />
           </Route>
@@ -93,15 +137,33 @@ function App() {
               </StarWarsProvider>
             }
           >
-            <Route index element={<Starships />} />
+            <Route
+              index
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <Starships />
+                </Suspense>
+              }
+            />
             <Route
               path=":id"
-              element={<StarshipDetails />}
+              element={
+                <Suspense fallback={<FormLoader />}>
+                  <StarshipDetails />
+                </Suspense>
+              }
               errorElement={<EmptyError data={"starship"} />}
             />
           </Route>
         </Route>
-        <Route path="settings" element={<Settings />} />
+        <Route
+          path="settings"
+          element={
+            <Suspense fallback={<FormLoader />}>
+              <Settings />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<Error404 />} />
       </Route>
     )

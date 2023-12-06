@@ -22,6 +22,8 @@ export default function PlanetCard({ planet }) {
           src={image}
           alt={`${name} picture`}
           className="sm:w-44 w-36 object-contain"
+          width={176}
+          height={176}
         />
       </div>
     </div>

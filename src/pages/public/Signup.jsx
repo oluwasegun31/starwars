@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FormInput, FormError, FormLoader } from "../../components";
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { FormContext } from "../../context";
 import { signupError, signupLogic } from "../../authentication/signup";
 /**
@@ -67,7 +67,9 @@ export default function SigupPage() {
         <p className="sm:text-6xl text-4xl capitalize w-full text-center mt-10">
           sign up
         </p>
-        <FormInput formType={"sign up"} onClick={() => signupForm()} />
+        <Suspense fallback={<p>Loading....</p>}>
+          <FormInput formType={"sign up"} onClick={() => signupForm()} />
+        </Suspense>
         <p className="sm:text-[20px] text-lg text-center w-full">
           Already have an account?
           <Link className="text-secondary ml-2" to={"/signin"}>

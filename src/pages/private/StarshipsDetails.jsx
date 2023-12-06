@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { StarWarsContext } from "../../context";
 import { useNavigate, useParams } from "react-router-dom";
 import { FormLoader, StarshipDetailsCard } from "../../components";
@@ -37,7 +37,9 @@ export default function StarshipDetails() {
       >
         <BsArrowLeft />
       </div>
-      <StarshipDetailsCard starship={clickedStarship} />
+      <Suspense fallback={<p>Loading....</p>}>
+        <StarshipDetailsCard starship={clickedStarship} />
+      </Suspense>
     </section>
   );
 }

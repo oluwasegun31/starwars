@@ -1,4 +1,11 @@
-import { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import { StarWarsContext } from "../../context";
 import { useSearchParams } from "react-router-dom";
 import {
@@ -46,11 +53,13 @@ export default function Starships() {
       ) : filteredArr.length === 0 ? (
         <EmptyError data={"starships"} />
       ) : (
-        <section className="xl:w-[90%] md:w-[85%] w-[92%]  mx-auto grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-2 mt-10">
-          {filteredArr.map((starship) => {
-            return <StarshipCard key={starship.id} starship={starship} />;
-          })}
-        </section>
+        <Suspense fallback={<p>Loading....</p>}>
+          <section className="xl:w-[90%] md:w-[85%] w-[92%]  mx-auto grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-2 mt-10">
+            {filteredArr.map((starship) => {
+              return <StarshipCard key={starship.id} starship={starship} />;
+            })}
+          </section>
+        </Suspense>
       )}
     </section>
   );

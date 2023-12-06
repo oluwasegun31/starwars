@@ -32,6 +32,8 @@ export default function StarshipDetailsCard({ starship }) {
         src={image}
         alt={`image of ${name}`}
         className="sm:w-[400px] w-[300px] object-contain"
+        width={400}
+        height={300}
       />
       <section className="xl:w-[95%] sm:w-[98%] w-[90%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
         <div className="w-full flex flex-col justify-center items-center gap-0 bg-primary/20 backdrop-blur-3xl drop-shadow-2xl py-2 px-4 md:text-3xl sm:text-2xl text-[20px] font-normal capitalize">

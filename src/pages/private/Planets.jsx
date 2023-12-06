@@ -1,4 +1,11 @@
-import { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import { StarWarsContext } from "../../context/StarWarsDataContext";
 import {
   EmptyError,
@@ -52,11 +59,13 @@ export default function Planets() {
       ) : filteredArr.length === 0 ? (
         <EmptyError data={"planets"} />
       ) : (
-        <section className="sm:w-[92%] w-[95%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-10">
-          {filteredArr.map((planet) => {
-            return <PlanetCard key={planet.id} planet={planet} />;
-          })}
-        </section>
+        <Suspense fallback={<p>Loading...</p>}>
+          <section className="sm:w-[92%] w-[95%] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-10">
+            {filteredArr.map((planet) => {
+              return <PlanetCard key={planet.id} planet={planet} />;
+            })}
+          </section>
+        </Suspense>
       )}
     </section>
   );

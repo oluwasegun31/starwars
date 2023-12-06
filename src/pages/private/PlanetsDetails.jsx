@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate, useParams } from "react-router-dom";
 import { StarWarsContext } from "../../context";
@@ -41,7 +41,9 @@ export default function PlanetsDetails() {
       >
         <BsArrowLeft />
       </div>
-      <PlanetDetailsCard planet={clickedPlanet} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <PlanetDetailsCard planet={clickedPlanet} />
+      </Suspense>
     </section>
   );
 }

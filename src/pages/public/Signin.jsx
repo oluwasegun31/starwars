@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FormError, FormInput, FormLoader } from "../../components";
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { FormContext } from "../../context";
 import { signinError, signinLogic } from "../../authentication/siginin";
 /**
@@ -66,7 +66,9 @@ export default function SigninPage() {
         <p className="sm:text-6xl text-4xl capitalize w-full text-center mt-10">
           sign in
         </p>
-        <FormInput formType={"sign in"} onClick={() => signinForm()} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <FormInput formType={"sign in"} onClick={() => signinForm()} />
+        </Suspense>
         <p className="sm:text-[20px] text-lg text-center w-full">
           Don't have an account?
           <Link className="text-secondary ml-2" to={"/signup"}>

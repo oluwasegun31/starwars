@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { StarWarsContext } from "../../context";
 import { useEffect } from "react";
@@ -43,7 +43,9 @@ export default function CharacterDetails() {
       >
         <BsArrowLeft />
       </div>
-      <CharacterDetailsCard character={clickedCharacter} />
+      <Suspense fallback={<p>Loading....</p>}>
+        <CharacterDetailsCard character={clickedCharacter} />
+      </Suspense>
     </section>
   );
 }

@@ -17,6 +17,8 @@ export default function StarshipCard({ starship }) {
         src={image}
         alt={`image of ${name}`}
         className="w-48 object-contain opacity-50"
+        width={192}
+        height={200}
       />
       <p className="sm:text-4xl text-3xl font-medium absolute top-[50%] -translate-y-[50%] bg-primary/30  px-3">
         {name}
